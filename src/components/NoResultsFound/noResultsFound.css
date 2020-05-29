@@ -1,0 +1,25 @@
+.no-results-found {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 20px 0px;
+  margin-top: 100px;
+}
+.clear-button {
+  margin: 0px 5px;
+  padding: 2px 10px;
+  background: #fff;
+  cursor: pointer;
+  color: #3373fb;
+  border-radius: 3px;
+}
+.clear-button:hover {
+  background: #f5f6fa;
+  color: #3373fb;
+}
