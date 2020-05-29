@@ -58,7 +58,7 @@ class Home extends Component<Props, State> {
 
   // handling on change for text entered in the search box
   handleSearchValueChange(e) {
-    const { value } = e.target;
+    let { value } = e.target;
     this.setState(prevState=>({
       searchValue: value,
     }));
@@ -90,17 +90,17 @@ class Home extends Component<Props, State> {
     if(this.state.searchType !== 'all') {
       freelancer_list = this.state.freelancerList.filter((item) => {
         return (
-          (this.state.searchType === 'first_name' && item.first_name && item.first_name.toLowerCase().search(this.state.searchValue.toLowerCase()) !== -1) ||
-          (this.state.searchType === 'last_name' && item.last_name && item.last_name.toLowerCase().search(this.state.searchValue.toLowerCase()) !== -1) ||
-          (this.state.searchType === 'email' && item.email && item.email.toLowerCase().search(this.state.searchValue.toLowerCase()) !== -1)
+          (this.state.searchType === 'first_name' && item.first_name && item.first_name.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) !== -1) ||
+          (this.state.searchType === 'last_name' && item.last_name && item.last_name.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) !== -1) ||
+          (this.state.searchType === 'email' && item.email && item.email.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) !== -1)
         );
       });
     } else {
       freelancer_list = this.state.freelancerList.filter((item) => {
         return (
-          (item.first_name && item.first_name.toLowerCase().search(this.state.searchValue.toLowerCase()) !== -1) ||
-          (item.last_name && item.last_name.toLowerCase().search(this.state.searchValue.toLowerCase()) !== -1) ||
-          (item.email && item.email.toLowerCase().search(this.state.searchValue.toLowerCase()) !== -1)
+          (item.first_name && item.first_name.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) !== -1) ||
+          (item.last_name && item.last_name.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) !== -1) ||
+          (item.email && item.email.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) !== -1)
         );
       });
     }
